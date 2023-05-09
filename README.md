@@ -1,3 +1,5 @@
+You have to signup with your email and password before you can login into the dashboard.
+
 # AirportFlight
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.

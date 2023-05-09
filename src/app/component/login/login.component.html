@@ -1,0 +1,22 @@
+<div class="displayTable">
+    <div class="displayTableCell">
+        <h3 class="logo">Hamoye</h3>
+        <div class="authBlock">
+            <h3 class="login-text">Log in to your account</h3>
+            <div class="formGroup">
+                <label for="email" class="form-label">Email Address</label> <br/>
+                <input type="text" class="formControl" name="email" placeholder="Email address" #userEmail required [(ngModel)]="email">
+            </div> 
+            <div class="formGroup">
+                <label for="password" class="form-label">Password</label> <br />
+                <input type="password" class="formControl" placeholder="Password" #userPassword required [(ngModel)]="password">
+            </div>
+         <div class="buttonGroup">
+            <button type="button" (click)="logIn()">Login</button>
+            </div>
+        </div>
+        <div class="redirectToLogin">
+            <span>Don't have an account?<span class="redirect" routerLink="/register"><i>Sign Up</i></span></span>
+        </div>
+    </div>
+</div>

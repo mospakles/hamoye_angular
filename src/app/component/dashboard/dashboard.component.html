@@ -1,0 +1,41 @@
+<div class="container-fluid">
+    <div class="row">
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div class="inner-adjust">
+                <div class="up-container">
+                    <h3 class="logo">Hamoye</h3>
+                <button type="button" class="logout" (click)="logOut()">Log Out</button>
+                </div>
+
+                <h2 class="flight-text">FLIGHT TABLE INFORMATION</h2>
+                <div class="mat-elevation-z8">
+                    <table mat-table [dataSource]="dataSource">
+                        <ng-container matColumnDef="airport">
+                            <th mat-header-cell *matHeaderCellDef>AIRPORT</th>
+                            <td mat-cell *matCellDef="let row" class="tr-table">{{row.estDepartureAirport}}</td>
+                        </ng-container>
+                        <ng-container matColumnDef="time">
+                            <th mat-header-cell *matHeaderCellDef>TIME</th>
+                            <td mat-cell *matCellDef="let row" class="tr-table">{{row.firstSeen * 1000 | date: 'shortTime'}}</td>
+                        </ng-container>
+                        <ng-container matColumnDef="arrival">
+                            <th mat-header-cell *matHeaderCellDef> ARRIVAL</th>
+                            <td mat-cell *matCellDef="let row" class="tr-table">{{row.estArrivalAirportHorizDistance}}</td>
+                        </ng-container>
+                        <ng-container matColumnDef="departure">
+                            <th mat-header-cell *matHeaderCellDef> DEPARTURE</th>
+                            <td mat-cell *matCellDef="let row" class="tr-table">{{row.estDepartureAirportHorizDistance}}</td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+
+                    <mat-paginator [pageSizeOptions]="[10, 20, 30]" showFirstLastButtons aria-label="Select page flights">
+                    </mat-paginator>
+                </div>
+ 
+            </div>
+        </main>
+    </div>
+</div>

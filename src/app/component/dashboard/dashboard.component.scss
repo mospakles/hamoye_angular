@@ -71,3 +71,44 @@ button {
     text-align: center;
     padding: 10px;
 }
+
+.loader-container {
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    display: grid;
+
+    .loader {
+        width: 100%;
+        height: 5px;
+        display: inline-block;
+        position: relative;
+        background: #1092463f;
+        overflow: hidden;
+    }
+
+    .loader::after {
+        content: '';
+        width: 96px;
+        height: 5px;
+        background: #109247;
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        animation: hitZak .9s linear infinite alternate;
+    }
+
+    @keyframes hitZak {
+        0% {
+            left: 0;
+            transform: translateX(-1%);
+        }
+
+        100% {
+            left: 100%;
+            transform: translateX(-99%);
+        }
+    }
+
+}

@@ -22,6 +22,7 @@ export class DashboardComponent implements OnInit {
   flights: any;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  isLoading!: boolean;
   constructor(
     private auth: AuthService,
     private readonly dashboardService: DashboardService,
@@ -31,6 +32,7 @@ export class DashboardComponent implements OnInit {
       this.flights = data;
 
       this.dataSource = new MatTableDataSource(this.flights);
+      this.isLoading = false;
       this.dataSource.paginator = this.paginator;
     });
   }
